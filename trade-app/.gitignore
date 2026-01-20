@@ -1,0 +1,14 @@
+.env.example
+.DS_Store
+*.iml
+.idea/
+target/
+.classpath
+.project
+.settings/
+*.log
+*.swp
+*.swo
+*~
+.vscode/
+node_modules/

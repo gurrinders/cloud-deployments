@@ -1,0 +1,13 @@
+# .dockerignore file
+.git
+.gitignore
+.DS_Store
+.env
+.env.local
+*.md
+node_modules
+target
+.idea
+.vscode
+*.log
+.mvn/wrapper/maven-wrapper.jar

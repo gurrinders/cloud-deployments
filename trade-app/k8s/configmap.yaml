@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: trade-app-config
+  namespace: trading-system
+data:
+  SPRING_PROFILES_ACTIVE: "production"
+  SPRING_JPA_HIBERNATE_DDL_AUTO: "validate"
+  SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQL10Dialect"
+  SERVER_PORT: "8080"
+  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health,info,metrics"

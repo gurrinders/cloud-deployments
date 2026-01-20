@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  trade-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trade-app-container
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/tradedb
+      - SPRING_DATASOURCE_USERNAME=tradeuser
+      - SPRING_DATASOURCE_PASSWORD=tradepass123
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=update
+      - SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQL10Dialect
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - trading-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 5s
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: trade-db
+    environment:
+      POSTGRES_DB: tradedb
+      POSTGRES_USER: tradeuser
+      POSTGRES_PASSWORD: tradepass123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - trading-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U tradeuser"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  trading-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
