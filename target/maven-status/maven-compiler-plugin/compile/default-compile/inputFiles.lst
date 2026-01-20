@@ -1,0 +1,7 @@
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/TradingSystemApplication.java
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/service/TradingProductService.java
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/model/TradingProduct.java
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/controller/TradingProductController.java
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/repository/TradingProductRepository.java
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/config/SwaggerConfig.java
+/workspaces/cloud-deployments/src/main/java/com/tradingsystem/dto/TradingProductDTO.java

@@ -1,0 +1,7 @@
+com/tradingsystem/dto/TradingProductDTO.class
+com/tradingsystem/service/TradingProductService.class
+com/tradingsystem/repository/TradingProductRepository.class
+com/tradingsystem/controller/TradingProductController.class
+com/tradingsystem/config/SwaggerConfig.class
+com/tradingsystem/model/TradingProduct.class
+com/tradingsystem/TradingSystemApplication.class
